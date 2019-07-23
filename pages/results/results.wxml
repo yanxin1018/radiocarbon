@@ -1,0 +1,59 @@
+<!--results.wxml-->
+<view class="container">
+  <view class="header">
+    <text>校正结果</text>
+  </view>
+  <view class="description">
+    <text>碳十四年代：{{c14Age}} ± {{c14Err}}</text>
+  </view>
+  <view class="description">
+    <text>校正曲线：{{curveName}}</text>
+  </view>
+  <view class="description">
+    <text>校正结果（日历年代）： </text>
+  </view>
+  <view wx:if="{{result1Sigma[0].percentage!=='0%'}}" class="showresults">
+    <text selectable="true" class="sigmatitle">1 σ 范围 (68.2%)</text>
+    <block wx:for="{{result1Sigma}}" wx:key="left">
+      <view class="output">
+        <text selectable="true">{{item.left}} ({{item.percentage}}) {{item.right}}</text>
+        </view>
+    </block>
+    <text selectable="true"class="sigmatitle">2 σ 范围 (95.4%)</text>
+    <block wx:for="{{result2Sigma}}" wx:key="percentage">
+      <view class="output">
+        <text selectable="true">{{item.left}} ({{item.percentage}}) {{item.right}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view wx:if="{{result1Sigma[0].percentage=='0%'}}" class="showerr">
+      超出年代范围!
+  </view>
+
+  <view wx:if="{{result1Sigma[0].percentage!=='0%'}}" class="description" id="opt">
+  <view >
+    <text>精确到： </text>
+    <radio-group class="radio-group" bindchange="roundChange">
+      <label class="radio" wx:for="{{roundOpts}}" wx:key="precision">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view>
+    <text>日期格式： </text>
+     <radio-group class="radio-group" bindchange="formatChange">
+      <label class="radio" wx:for="{{formatOpts}}" wx:key="format">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+    
+  
+    
+  </view>
+
+
+
+  
+</view>

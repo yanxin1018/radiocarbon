@@ -1,0 +1,41 @@
+.description{
+  margin: 20rpx;
+  align-items: left;
+  width: 700rpx;
+  padding-left:50rpx;
+}
+.showresults{
+  margin-left:50rpx;
+  margin-right:50rpx;
+  margin-top:20rpx;
+  align-items: center;
+  align-content:center;
+  width:650rpx;
+  color:grey;
+}
+.showerr{
+  margin-left:50rpx;
+  margin-right:50rpx;
+  margin-top:20rpx;
+  align-items: center;
+  align-content:center;
+  text-align: center;
+  width:650rpx;
+  color:red;
+}
+.output{
+  text-align: center;
+  margin:20rpx;
+}
+#opt{
+  padding-top:20rpx;
+  border-top: 1px solid grey;
+}
+.setting{
+  margin-left:50rpx;
+  padding-top:20rpx;
+}
+.radio-group{
+  margin:20rpx;
+  padding-left:50rpx;
+}

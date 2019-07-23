@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view id="cover" >
+    <image style="width: 200rpx; height:200rpx" src="../../img/cover250.png"></image>
+  </view>
+
+  <view class="title">
+    <text>RabbitCal</text>
+  </view>
+
+  <view class="input" id="radiocarbonDate">
+    <text>请输入碳十四年代和误差：</text>
+    <view id="rc">
+      <input type="number" bindinput="bindRCAgeInput" placeholder="碳十四年代 (BP)" auto-focus/>
+    </view>
+    <view id="err">
+      <input type="number" bindinput="bindRCErrInput" placeholder="误差" />
+    </view>
+    <view id="curve">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">请选择曲线：{{array[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view id="calibrate">
+    <button type="primary" hover-class="button-hover" disabled="{{disabled}}" ontap="calibrate">校正</button>
+  </view>
+
+</view>
